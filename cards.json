@@ -1,0 +1,34 @@
+{
+    "card": [
+
+        {
+            "id": 1,
+            "spanish": "la silla",
+            "english": "chair"
+        },
+
+        {
+            "id": 2,
+            "spanish": "caerse",
+            "english": "to fall"
+        },
+
+        {
+            "id:": 3,
+            "spanish": "la caja",
+            "english": "box, cash register"
+        },
+
+        {
+            "id": 4,
+            "spanish": "los calcitines",
+            "english": "socks"
+        },
+
+        {
+            "id": 5,
+            "spanish": "cambiar",
+            "english": "to change"
+        }
+    ]
+}
