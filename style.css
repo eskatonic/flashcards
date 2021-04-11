@@ -1,1 +1,22 @@
+body {
+    /* display: grid; */
+    background-color: mintcream;
+}
 
+.main {
+    text-align: center;
+    margin: auto;
+    border: 5em;
+}
+#card {
+    height: 150px;
+    width: 300px;
+    background-color: mediumturquoise;
+    grid-template: 150px / 300px;
+    border: 5em;
+}
+
+button {
+    background-color: #ff6b6b;
+    border: 5em;
+}
