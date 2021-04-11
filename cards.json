@@ -1,7 +1,4 @@
-{
-    "card": [
-
-        {
+[ {
             "id": 1,
             "spanish": "la silla",
             "english": "chair"
@@ -30,5 +27,4 @@
             "spanish": "cambiar",
             "english": "to change"
         }
-    ]
-}
+]
