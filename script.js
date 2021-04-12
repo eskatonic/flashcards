@@ -8,11 +8,14 @@
 
 
 // VARIABLES
+const instructions = document.querySelector("#instructions");
+const closeButton = document.querySelector("#close");
+const newGameButton = document.querySelector("#newgame");
 const rightButton = document.querySelector("#right");
 const wrongButton = document.querySelector("#wrong");
 const cardButton = document.querySelector("#card");
 const nextButton = document.querySelector("#next");
-// let cards = [{id: 1, Spanish: "La Calle", English: "Street"}];
+
 let cards = [ {
     "id": 1,
     "spanish": "la silla",
@@ -44,22 +47,35 @@ let cards = [ {
 }
 ];
 
-// import data from "./cards.json";
-// console.log(data);
-
 
 // FUNCTIONS
 
-// Load the Deck from JSON
-// function load() {
-//     let cards = JSON.parse(cards);
-//     console.log(cards);
-// }
+// INSTRUCTIONS
 
+const instructionsModal = (e) => {
+    modal.style.display = "block";
+}
 // SHUFFLE DECK:
+// https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+
+const shuffleDeck = (e) => {
+    // let newDeck = [];
+    for (i = cards.length -1; i > 0; i--) {
+        let j = Math.floor(Math.random() * i);
+        let newDeck = cards[i];
+        cards[i] = cards[j];
+        cards[j] = newDeck;
+    }
+}
+
 // Create a new array of cards from the deck.
-const newCard = (e) => {
-    // console.log("NEW CARD BUTTON PRESSED");
+const newGame = (e) => {
+    cardButton.innerText = "";
+    shuffleDeck();
+    for (i = 0; i <= cards.length; i++){
+    console.log(cards[i]);
+    }
+
 }
 
 const wrongButtonPress = (e) => {
@@ -80,9 +96,19 @@ const nextButtonPress = (e) => {
     // console.log("NEXT CARD BUTTON PRESSED");
 }
 
+const newCard = (e) => {
+
+}
+
+const closeModal = () => {
+    modal.style.display = 'none'
+  }
+
 // EVENT HANDLERS
 rightButton.addEventListener("click", newCard);
 wrongButton.addEventListener("click", wrongButtonPress);
 cardButton.addEventListener("click", cardPress);
 nextButton.addEventListener("click", nextButtonPress);
-
+instructions.addEventListener("click",instructionsModal);
+closeButton.addEventListener("click", closeModal);
+newGameButton.addEventListener("click", newGame);
