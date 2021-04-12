@@ -44,19 +44,28 @@ let cards = [ {
 }
 ];
 
-// import data from "./cards.json";
-// console.log(data);
-
 
 // FUNCTIONS
 
-// Load the Deck from JSON
-// function load() {
-//     let cards = JSON.parse(cards);
-//     console.log(cards);
-// }
-
 // SHUFFLE DECK:
+
+const shuffleDeck = (e) => {
+    // let newDeck = [];
+    for (i = cards.length -1; i > 0; i--) {
+        let j = Math.floor(Math.random() * i);
+        let newDeck = cards[i];
+        cards[i] = cards[j];
+        cards[j] = newDeck;
+    }
+}
+
+shuffleDeck();
+console.log("The cards are: ");
+for(i = 0; i < cards.length; i++) {
+    console.log(`$cards[i].id`);
+}
+
+
 // Create a new array of cards from the deck.
 const newCard = (e) => {
     // console.log("NEW CARD BUTTON PRESSED");
@@ -68,11 +77,11 @@ const wrongButtonPress = (e) => {
 
 const cardPress = (e) => {
     // If the card is showing one language, clicking on it again will show the other.
-    if (e.target.innerText === cards[0].spanish)
+    if (e.target.innerText === cards[1].spanish)
     {
-        e.target.innerText = `${cards[0].english}`;
+        e.target.innerText = `${cards[1].english}`;
     } else {
-        e.target.innerText = `${cards[0].spanish}`;
+        e.target.innerText = `${cards[1].spanish}`;
     }
 }
 
