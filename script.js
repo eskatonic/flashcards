@@ -68,16 +68,14 @@ const shuffleDeck = (e) => {
     }
 }
 
-shuffleDeck();
-console.log("The cards are: ");
-for(i = 0; i < cards.length; i++) {
-    console.log(`$cards[i].id`);
-}
-
-
 // Create a new array of cards from the deck.
-const newCard = (e) => {
-    // console.log("NEW CARD BUTTON PRESSED");
+const newGame = (e) => {
+    cardButton.innerText = "";
+    shuffleDeck();
+    for (i = 0; i <= cards.length; i++){
+    console.log(cards[i]);
+    }
+
 }
 
 const wrongButtonPress = (e) => {
@@ -86,16 +84,20 @@ const wrongButtonPress = (e) => {
 
 const cardPress = (e) => {
     // If the card is showing one language, clicking on it again will show the other.
-    if (e.target.innerText === cards[1].spanish)
+    if (e.target.innerText === cards[0].spanish)
     {
-        e.target.innerText = `${cards[1].english}`;
+        e.target.innerText = `${cards[0].english}`;
     } else {
-        e.target.innerText = `${cards[1].spanish}`;
+        e.target.innerText = `${cards[0].spanish}`;
     }
 }
 
 const nextButtonPress = (e) => {
     // console.log("NEXT CARD BUTTON PRESSED");
+}
+
+const newCard = (e) => {
+
 }
 
 const closeModal = () => {
@@ -109,3 +111,4 @@ cardButton.addEventListener("click", cardPress);
 nextButton.addEventListener("click", nextButtonPress);
 instructions.addEventListener("click",instructionsModal);
 closeButton.addEventListener("click", closeModal);
+newGameButton.addEventListener("click", newGame);
