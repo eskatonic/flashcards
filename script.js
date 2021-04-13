@@ -68,23 +68,19 @@ const rightButton = document.querySelector("#right");
 const wrongButton = document.querySelector("#wrong");
 const cardButton = document.querySelector("#card");
 const nextButton = document.querySelector("#next");
-
-// If "Correct" is pressed, correct count goes up by 1 and card is discarded.
-// If "Wrong" is pressed, card is pushed to end of deck for retry.
-
-
+let score = document.getElementById("score");
+let currentScore = 0;
+let rightAnswer = 0;
+let wrongAnswer = 0;
+let currentCard;
 
 
 // FUNCTIONS
 
-// INSTRUCTIONS
 
-const instructionsModal = (e) => {
-    modal.style.display = "block";
-}
+
 // SHUFFLE DECK:
 // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-
 const shuffleDeck = (e) => {
     for (i = cards.length -1; i > 0; i--) {
         let j = Math.floor(Math.random() * i);
@@ -94,45 +90,75 @@ const shuffleDeck = (e) => {
     }
 }
 
-// Create a new array of cards from the deck.
+// "NEW GAME" BUTTON CLICKED
 const newGame = (e) => {
-    cardButton.innerText = "";
+    console.log("NEW GAME BUTTON PRESSED");
     shuffleDeck();
-    for (i = 0; i < cards.length; i++){
-    console.log(cards[i]);
-    }
-
+    rightAnswer = 0;
+    wrongAnswer = 0;
+    currentCard = cards[0];
 }
 
+
+// GO TO NEXT CARD IN CARDS ARRAY
+const nextCard = (e) => {
+    // if cards[currentIndex] go to cards[currentIndex +1]
+    currentCard.innerText="";
+    for (i = 0; i < cards.length; i++) {
+        if (currentCard === cards[i]) {
+            currentCard = cards[i + 1];
+            return currentCard;
+        }
+    }
+    console.log(currentCard[i]);  // <- this does nothing.
+}
+
+// "NEXT CARD" BUTTON CLICKED
+const nextButtonPress = (e) => {
+    nextCard();
+    console.log("NEXT BUTTON PRESSED");
+}
+
+// FLASH CARD CLICKED
+const cardPress = (e) => {
+    console.log(`The contents = ${currentCard.spanish}`);
+    // If the card is showing one language, clicking on it again will show the other.
+    // BUG - this cannot target card[i] or currentCard.  What does it need?
+    if (e.target.innerText === currentCard.spanish)
+    {
+        e.target.innerText = `${currentCard.english}`;
+    } else {
+        e.target.innerText = `${currentCard.spanish}`;
+    }
+}
+
+// "RIGHT" BUTTON CLICKED
+const rightButtonPress = (e) => {
+    currentScore += 1;
+    score.innerText = currentScore;
+    console.log(score.innerHTML);
+}
+
+// "WRONG" BUTTON CLICKED
 const wrongButtonPress = (e) => {
     // console.log("WRONG BUTTON PRESSED");
+    wrongAnswer += 1;
+    nextButtonPress();
+    console.log(`Wrong Answers = ${wrongAnswer}`); 
 }
 
-const cardPress = (e) => {
-    // If the card is showing one language, clicking on it again will show the other.
-
-    if (e.target.innerText === cards[0].spanish)
-    {
-        e.target.innerText = `${cards[0].english}`;
-    } else {
-        e.target.innerText = `${cards[0].spanish}`;
-    }
+// "INSTRUCTIONS" BUTTON CLICKED
+const instructionsModal = (e) => {
+    modal.style.display = "block";
 }
 
-const nextButtonPress = (e) => {
-    console.log("NEXT CARD BUTTON PRESSED");
-}
-
-const newCard = (e) => {
-
-}
-
+// "CLOSE" BUTTON IN MODAL BOX CLICKED
 const closeModal = () => {
     modal.style.display = 'none'
-  }
+}
 
 // EVENT HANDLERS
-rightButton.addEventListener("click", newCard);
+rightButton.addEventListener("click", rightButtonPress);
 wrongButton.addEventListener("click", wrongButtonPress);
 cardButton.addEventListener("click", cardPress);
 nextButton.addEventListener("click", nextButtonPress);
