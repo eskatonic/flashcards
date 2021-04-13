@@ -96,6 +96,7 @@ const newGame = (e) => {
     shuffleDeck();
     rightAnswer = 0;
     wrongAnswer = 0;
+    score.innerText = 0;
     currentCard = cards[0];
 }
 
