@@ -70,14 +70,11 @@ button {
 
 #score {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align:inherit;
+    text-align:center;
     margin: auto;
-    /* border: 5em; */
     border-radius: 50%;
     height: 75px;
     width: 75px;
     background-color: mediumturquoise;
-    /* grid-template: 300px / 600px; */
-    font-size: 40px;
-    /* border: 5em; */
+    font-size: 50px;
 }

@@ -101,25 +101,34 @@ const newGame = (e) => {
 
 
 // GO TO NEXT CARD IN CARDS ARRAY
-const nextCard = (currentCard) => {
-    currentCard = cards.indexOf(i);
+const nextCard = (e) => {
+    // if cards[currentIndex] go to cards[currentIndex +1]
+    currentCard.innerText="";
+    for (i = 0; i < cards.length; i++) {
+        if (currentCard === cards[i]) {
+            currentCard = cards[i + 1];
+            return currentCard;
+        }
+    }
+    console.log(currentCard[i]);  // <- this does nothing.
 }
 
 // "NEXT CARD" BUTTON CLICKED
 const nextButtonPress = (e) => {
-    nextCard(currentCard);
+    nextCard();
     console.log("NEXT BUTTON PRESSED");
 }
 
 // FLASH CARD CLICKED
 const cardPress = (e) => {
-    console.log("CARD CLICKED");
+    console.log(`The contents = ${currentCard.spanish}`);
     // If the card is showing one language, clicking on it again will show the other.
-    if (e.target.innerText === cards[i].spanish)
+    // BUG - this cannot target card[i] or currentCard.  What does it need?
+    if (e.target.innerText === currentCard.spanish)
     {
-        e.target.innerText = `${cards[i].english}`;
+        e.target.innerText = `${currentCard.english}`;
     } else {
-        e.target.innerText = `${cards[i].spanish}`;
+        e.target.innerText = `${currentCard.spanish}`;
     }
 }
 
@@ -134,6 +143,7 @@ const rightButtonPress = (e) => {
 const wrongButtonPress = (e) => {
     // console.log("WRONG BUTTON PRESSED");
     wrongAnswer += 1;
+    nextButtonPress();
     console.log(`Wrong Answers = ${wrongAnswer}`); 
 }
 
