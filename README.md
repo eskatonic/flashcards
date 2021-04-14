@@ -11,8 +11,19 @@ This project is a flashcard game intended to help those learning Spanish vocabul
 Spanish Flashcards was built using Javascript, HTML, and CSS.  It is more of a traditional flashcard teaching tool than a "game," in that there is no limit to the number of cards a student can 
 
 ## Screenshots
+
+The Start Screen
 ![Screen Shot 2021-04-13 at 7 06 57 PM](https://user-images.githubusercontent.com/4081477/114644017-9474c580-9c8b-11eb-9d7e-b80ca140eca8.png)
-![Screen Shot 2021-04-13 at 7 06 57 PM](https://user-images.githubusercontent.com/4081477/114644161-d867ca80-9c8b-11eb-89d9-865d8919a90d.png)
+
+The Instructions Screen
+![Screen Shot 2021-04-13 at 7 08 21 PM](https://user-images.githubusercontent.com/4081477/114644367-3ac0cb00-9c8c-11eb-8654-0c33f52b66c5.png)
+
+A New Game Begins!
+[Screen Shot 2021-04-13 at 7 08 42 PM](https://user-images.githubusercontent.com/4081477/114644430-59bf5d00-9c8c-11eb-9b93-0dc61fc6d491.png)
+
+You Got One Right!!!
+[Screen Shot 2021-04-13 at 7 08 52 PM](https://user-images.githubusercontent.com/4081477/114644448-62179800-9c8c-11eb-8f10-830c3ca47b2d.png)
+
 
 ## Resources
 
