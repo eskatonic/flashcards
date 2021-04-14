@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Spanish Flash Card Game
+    <title>Spanish Flashcards
     </title>
 </head>
 <body>
     <div class="main">
-        <h1>SPANISH FLASHCARD GAME</h1>
+        <h1>SPANISH FLASHCARDS</h1>
         <button class="modal-buttons" id="instructions">INSTRUCTIONS</button>
         <div id="modal">
             <div id="modal-textbox">
                 <h1>INSTRUCTIONS</h1>
-                <p>Click on <em>NEW GAME</em> to start the game.<br><br>Click on the blue card for the first Spanish word.<br><br>When you're ready with your answer, click on it again, and the English translation will appear.<br><br>If you guessed correctly, click on <em>RIGHT</em>.  If you didn't click on <em>WRONG</em>.</p>
+                <p>Click on <em>NEW GAME</em> to start the game.<br><br>Click on the blue card for the first Spanish word.<br><br>When you're ready with your answer, click on it again, and the English translation will appear.<br><br>If you guessed correctly, click on <em>RIGHT</em>.  If you didn't click on <em>WRONG</em>.<br><br>In either event, the next time you click on the Flashcard, it will present a new word!</p>
                 <div id="modal-footer">
                     <button class="modal-buttons" id="close">CLOSE WINDOW</button>
                 </div>
@@ -29,10 +29,13 @@
         <div class="controls">
             <button id="right">RIGHT</button>
             <button id="wrong">WRONG</button><br><br>
-            <button id="next">NEXT CARD</button>
-        </div><br><br>
+            <!-- <button id="next">NEXT CARD</button> -->
+        </div><br>
         <h2>SCORE</h2>
-        <div id="score"></div>
+        <div id="score">
+            <div id="rightScore"></div>
+            <div id="wrongScore"></div>
+        </div>
     </div>
     <script src="script.js"></script>
     <script src="cards.json"></script>

@@ -5,7 +5,7 @@
 
 // VARIABLES
 
-// Research why neither of these work here (module/require/import/node):
+// TODO: Research why neither of these work here (module/require/import/node):
 // const cards = require('./cards.json');
 // import * as cards from "./cards.json";
 let cards = [
@@ -58,7 +58,57 @@ let cards = [
     {"id": 47,  "spanish": "el arquitecto / la arquitecta", "english": "architect"},
     {"id": 48,  "spanish": "arreglar",              "english": "to fix, to arrange"},
     {"id": 49,  "spanish": "el arroz",              "english": "rice"},
-    {"id": 50,  "spanish": "el arte",               "english": "art"}
+    {"id": 50,  "spanish": "el arte",               "english": "art"},
+    {"id": 51,  "spanish": "el período",            "english": "period"},
+    {"id": 52,  "spanish": "el pie",                "english": "foot"},
+    {"id": 53,  "spanish": "la piedra",             "english": "stone"},
+    {"id": 54,  "spanish": "la piel",               "english": "skin"},
+    {"id": 55,  "spanish": "la pierna",             "english": "leg"},
+    {"id": 56,  "spanish": "las píldoras",          "english": "pills"},
+    {"id": 57,  "spanish": "el pimentón",           "english": "green pepper"},
+    {"id": 58,  "spanish": "la pimienta",           "english": "pepper"},
+    {"id": 59,  "spanish": "la piña",               "english": "pineapple"},
+    {"id": 60,  "spanish": "las pinturas",          "english": "paints"},
+    {"id": 61,  "spanish": "la piscina",            "english": "swimming pool"},
+    {"id": 62,  "spanish": "el piso",               "english": "floor, apartment"},
+    {"id": 63,  "spanish": "el cajero automático",  "english": "ATM"},
+    {"id": 64,  "spanish": "la prueba",             "english": "quiz"},
+    {"id": 65,  "spanish": "la taza",               "english": "cup"},
+    {"id": 66,  "spanish": "la tarea",              "english": "homework, task"},
+    {"id": 67,  "spanish": "tampoco",               "english": "neither"},
+    {"id": 68,  "spanish": "el tamaño",             "english": "size"},
+    {"id": 69,  "spanish": "la talla",              "english": "size (shoes or clothes)"},
+    {"id": 70,  "spanish": "el suelo",              "english": "floor"},
+    {"id": 71,  "spanish": "subir",                 "english": "to go up"},
+    {"id": 72,  "spanish": "sonar",                 "english": "to ring"},
+    {"id": 73,  "spanish": "soñar (con)",           "english": "to dream (of)"},
+    {"id": 74,  "spanish": "soleado/a",             "english": "sunny"},
+    {"id": 75,  "spanish": "el sobrino / la sobrina",   "english": "nephew / niece"},
+    {"id": 76,  "spanish": "sobresaliente",         "english": "outstanding"},
+    {"id": 77,  "spanish": "el sobre",              "english": "envelope"},
+    {"id": 78,  "spanish": "sobre",                 "english": "about, above"},
+    {"id": 79,  "spanish": "simpatico/a",           "english": "friendly, likeable"},
+    {"id": 80,  "spanish": "la servilleta",         "english": "napkin"},
+    {"id": 81,  "spanish": "séptimo/a",             "english": "seventh"},
+    {"id": 82,  "spanish": "la semana que viene",   "english": "next week"},
+    {"id": 83,  "spanish": "el semáforo",           "english": "traffic light"},
+    {"id": 84,  "spanish": "la selva",              "english": "jungle"},
+    {"id": 85,  "spanish": "el sello",              "english": "stamp"},
+    {"id": 86,  "spanish": "seguir",                "english": "to continue"},
+    {"id": 87,  "spanish": "la seda",               "english": "silk"},
+    {"id": 88,  "spanish": "la sandía",             "english": "watermelon"},
+    {"id": 89,  "spanish": "la salsa",              "english": "sauce"},
+    {"id": 90,  "spanish": "la salchicha",          "english": "sausage"},
+    {"id": 91,  "spanish": "la sal",                "english": "salt"},
+    {"id": 92,  "spanish": "sacar",                 "english": "to take out, to take away"},
+    {"id": 93,  "spanish": "sacar una mala nota",   "english": "to get a bad grade"},
+    {"id": 94,  "spanish": "el sacapuntas",         "english": "pencil sharpener"},
+    {"id": 95,  "spanish": "sabroso/a",             "english": "delicious"},
+    {"id": 96,  "spanish": "rubio/a",               "english": "blond"},
+    {"id": 97,  "spanish": "la libertad",           "english": "freedom"},
+    {"id": 98,  "spanish": "el león",               "english": "lion"},
+    {"id": 99,  "spanish": "la lengua",             "english": "tongue"},
+    {"id": 100,  "spanish": "las legumbres",         "english": "vegetables"}
     ];
 
 const instructions = document.querySelector("#instructions");
@@ -77,8 +127,6 @@ let currentCard;
 
 // FUNCTIONS
 
-
-
 // SHUFFLE DECK:
 // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 const shuffleDeck = (e) => {
@@ -92,10 +140,10 @@ const shuffleDeck = (e) => {
 
 // "NEW GAME" BUTTON CLICKED
 const newGame = (e) => {
-    console.log("NEW GAME BUTTON PRESSED");
     shuffleDeck();
-    rightAnswer = 0;
+    // rightAnswer = 0;
     wrongAnswer = 0;
+    currentScore = 0;
     score.innerText = 0;
     currentCard = cards[0];
 }
@@ -104,25 +152,23 @@ const newGame = (e) => {
 // GO TO NEXT CARD IN CARDS ARRAY
 const nextCard = (e) => {
     // if cards[currentIndex] go to cards[currentIndex +1]
-    currentCard.innerText="";
+    currentCard.innerText=""; // <- TODO: This line does not work.
     for (i = 0; i < cards.length; i++) {
         if (currentCard === cards[i]) {
             currentCard = cards[i + 1];
+            currentCard.innerText = currentCard.spanish;
             return currentCard;
         }
     }
-    console.log(currentCard[i]);  // <- this does nothing.
 }
 
 // "NEXT CARD" BUTTON CLICKED
 const nextButtonPress = (e) => {
     nextCard();
-    console.log("NEXT BUTTON PRESSED");
 }
 
 // FLASH CARD CLICKED
 const cardPress = (e) => {
-    console.log(`The contents = ${currentCard.spanish}`);
     // If the card is showing one language, clicking on it again will show the other.
     // BUG - this cannot target card[i] or currentCard.  What does it need?
     if (e.target.innerText === currentCard.spanish)
@@ -137,15 +183,13 @@ const cardPress = (e) => {
 const rightButtonPress = (e) => {
     currentScore += 1;
     score.innerText = currentScore;
-    console.log(score.innerHTML);
+    nextButtonPress();
 }
 
 // "WRONG" BUTTON CLICKED
 const wrongButtonPress = (e) => {
-    // console.log("WRONG BUTTON PRESSED");
     wrongAnswer += 1;
     nextButtonPress();
-    console.log(`Wrong Answers = ${wrongAnswer}`); 
 }
 
 // "INSTRUCTIONS" BUTTON CLICKED
@@ -162,7 +206,8 @@ const closeModal = () => {
 rightButton.addEventListener("click", rightButtonPress);
 wrongButton.addEventListener("click", wrongButtonPress);
 cardButton.addEventListener("click", cardPress);
-nextButton.addEventListener("click", nextButtonPress);
+// NOTE: Keeping for future iteration of game.  In this instance it is no longer used.
+// nextButton.addEventListener("click", nextButtonPress);
 instructions.addEventListener("click",instructionsModal);
 closeButton.addEventListener("click", closeModal);
 newGameButton.addEventListener("click", newGame);
