@@ -1,25 +1,34 @@
-# flashcards
-General Assembly SEI Project 1: Spanish Flash Card Game
+# GA-SEI-Project-One
 
-Cards from "Berlitz Spanish Vocabulary Study Cards"
-https://smile.amazon.com/Berlitz-Spanish-Vocabulary-Study-Cards/dp/9812680756/ref=sr_1_1?crid=204V8N3JS9CVS&dchild=1&keywords=berlitz+spanish+vocabulary+cards&qid=1618262258&sprefix=berlitz+spanish+voca%2Caps%2C220&sr=8-1
+General Assembly SEI Project 1: **Spanish Flashcards**
+___
+## Welcome
+
+This project is a flashcard game intended to help those learning Spanish vocabulary.  It was developed by Brian Mays, a student in General Assembly's Software Engineering Immersive program.
+
+## About
+
+Spanish Flashcards was built using Javascript, HTML, and CSS.  It is more of a traditional flashcard teaching tool than a "game," in that there is no limit to the number of cards a student can 
+
+## Screenshots
+![Screen Shot 2021-04-13 at 7 06 57 PM](https://user-images.githubusercontent.com/4081477/114644017-9474c580-9c8b-11eb-9d7e-b80ca140eca8.png)
+![Screen Shot 2021-04-13 at 7 06 57 PM](https://user-images.githubusercontent.com/4081477/114644161-d867ca80-9c8b-11eb-89d9-865d8919a90d.png)
+
+## Resources
+
+The cards themselves are from "[Berlitz Spanish Vocabulary Study Cards](https://smile.amazon.com/Berlitz-Spanish-Vocabulary-Study-Cards/dp/9812680756/ref=sr_1_1?crid=204V8N3JS9CVS&dchild=1&keywords=berlitz+spanish+vocabulary+cards&qid=1618262258&sprefix=berlitz+spanish+voca%2Caps%2C220&sr=8-1) ."
 
 
-Shuffling Cards Using the Fisher-Yates Algorithm
-https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+
+Shuffling the cards uses the [Fisher-Yates Algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle).
 
 
-Color Pallete
-https://coolors.co/1a535c-4ecdc4-f7fff7-ff6b6b-ffe66d
+
+
+The colors for the entire site are based on a color pallet from [coolers.co](https://coolors.co/1a535c-4ecdc4-f7fff7-ff6b6b-ffe66d):
 
 Mintcream #F7FFF7
 Midnight Green Eagle Green #1A535C
 Medium Turquoise #4ECDC4
 Bittersweet #FF6B6B
 Naples Yellow #FFE66D
-
-
-Bootstrap
-https://www.bootstrapcdn.com/
-Bootstrap Buttons
-https://getbootstrap.com/docs/4.0/components/buttons/
